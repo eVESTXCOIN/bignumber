@@ -1,0 +1,12 @@
+{
+  "dist/bignumber.umd.js": {
+    "bundled": 101741,
+    "minified": 24228,
+    "gzipped": 9837
+  },
+  "dist/bignumber.umd.min.js": {
+    "bundled": 24228,
+    "minified": 24228,
+    "gzipped": 9837
+  }
+}

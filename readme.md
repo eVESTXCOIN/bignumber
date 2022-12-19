@@ -1,4 +1,4 @@
-### @waves/bignumber
+# @evestx/bignumber
 
 A JavaScript library for arbitrary-precision decimal and non-decimal arithmetic.
 
@@ -11,29 +11,29 @@ The library is the single JavaScript file *bignumber.umd.js* (or minified, *bign
 Browser:
 
 ```html
-<script src='path/to/bignumber.js'></script>
+<script src='./dist/bignumber.umd.min.js'></script>
 ```
 
 [Node.js](http://nodejs.org):
 
 ```bash
-$ npm install @waves/bignumber
+$ npm install @evestx/bignumber
 ```
 
 ```javascript
-const { BigNumber } = require('@waves/bignumber');
+const { BigNumber } = require('@evestx/bignumber');
 ```
 
 ES6 module:
 
 ```javascript
-import { BigNumber } from "@waves/bignumber"
+import { BigNumber } from "@evestx/bignumber"
 ```
 
 AMD loader libraries such as [requireJS](http://requirejs.org/):
 
 ```javascript
-require(['@waves/bignumber'], function(BigNumber) {
+require(['@evestx/bignumber'], function(BigNumber) {
     // Use BigNumber here in local scope. No global BigNumber.
 });
 ```
@@ -56,7 +56,7 @@ x.toFixed();                        // "1111222233334444555566"
 ```
 
 ##### Clone
-Клонирует объект 
+Clones an object
 
 ```javascript
 const some = new BigNumber(1);
@@ -64,42 +64,42 @@ const clone = some.clone();
 ```
 
 ##### Add
-Выполняет сложение
+Performs addition
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.add('50'); // with method toFixed '150'
 ```
 
 ##### Sub
-Вычитание
+Subtraction
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.sub('50'); // with method toFixed '50'
 ```
 
 ##### Mul
-Умножение
+Multiplication
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.mul(2); // with method toFixed '200'
 ```
 
 ##### Div
-Деление
+Division
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.div(2); //  with method toFixed '50'
 ```
 
 ##### Pow
-Возведение в степень
+Exponentiation
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.pow(2); // with method toFixed '10000'
 ```
 
 ##### Sqrt
-Квадратный корень
+Square root
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.sqrt(); // with method toFixed '10'
@@ -107,14 +107,15 @@ const result = bigNum.sqrt(); // with method toFixed '10'
 
 
 ##### Abs
-Модуль
+Module
+
 ```javascript
 const bigNum = new BigNumber('-100');
 const result = bigNum.abs(); // with method toFixed 100
 ```
 
 ##### Mod 
-Остаток от деления
+Remainder of the division
 
 ```javascript
 const bigNum = new BigNumber('100');
@@ -122,121 +123,121 @@ const result = bigNum.mod(10); // with method toFixed '0'
 ```
 
 ##### RoundTo
-Округляет. Принимает количество знаков после запятой после округлени и режим округления
-см тут: http://mikemcl.github.io/bignumber.js/#constructor-properties
+Rounds up. Accepts number of decimal places after rounding and rounding mode
+see here: http://mikemcl.github.io/bignumber.js/#constructor-properties
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.roundTo(); //
 ```
 
 ##### Eq
-Равенство
+Equality
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.eq(100); // true
 ```
 
 ##### Lt
-Меньше
+Less
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.lt(); //
 ```
 
 ##### Gt
-Больше
+More
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.gt(); //
 ```
 
 ##### Lte
-Меньше или равно
+Less than or equal to
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.lte(); //
 ```
 
 ##### Gte
-Больше или равно
+More or equal
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.gte(); //
 ```
 
 ##### IsNaN
-Проверяет на NaN
+Checks for NaN
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.isNaN(); // false
 ```
 
 ##### IsFinite
-Проверяет на Infinity (положительный и отрицательный)
+Checks for Infinity (positive and negative)
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.isFinite(); //
 ```
 
 ##### IsZero
-Проверяет на равенство нулю
+Checks for null
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.isZero(); // false
 ```
 
 ##### IsPositive
-Больше нуля
+Above zero
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.isPositive(); // true
 ```
 
 ##### IsNegative
-Меньше нуля
+Less than zero
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.isNegative(); // false
 ```
 
 ##### IsInt
-Проверяет целое ли число
+Checks if an integer
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.isInt(); //
 ```
 
 ##### GetDecimalsCount
-Получаем количество занков после запятой у числа
+We get the number of zanks after the decimal point of the number
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.getDecimalsCount(); // 0
 ```
 
 ##### IsEven
-Четное
+Even
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.isEven(); // true
 ```
 
 ##### IsOdd
-Не чётное
+not even
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.isOdd(); // false
 ```
 
 ##### ToBytes
-Переводим число в байты со знаком (8 байт). Работает только с целыми числами. 
+Convert the number to signed bytes (8 bytes). Works only with integers.
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.toBytes();
 ```
 
 ##### ToFormat
-Выводим число в строковом эквиваленте c с учётом настроек форматирования. 
-Опционально принимает количество знаков округления, режим округления (как в roundTo) и настройки формата вывода.
+We output the number in the string equivalent of c, taking into account the formatting settings.
+Optionally accepts the number of rounding characters, rounding mode (as in roundTo), and output format settings.
 ```javascript
 const bigNum = new BigNumber('1000000.12312');
 bigNum.toFormat(); // 1,000,000.12312 
@@ -247,14 +248,14 @@ bigNum.toFormat(2, 0, { groupSeparator: ' ' }); // 1 000 000.13
 ```
 
 ##### ToFixed
-Выводим число в строковом эквиваленте. Опционально принимает количество знаков округления и режим округления (как в roundTo)
+Output the number in string equivalent. Optionally accepts the number of rounding characters and the rounding mode (as in roundTo)
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.toFixed(); //
 ```
 
 ##### ToNumber
-Приводит к числу
+Leads to number
 ```javascript
 const bigNum = new BigNumber('100');
 const result = bigNum.toNumber(); //
@@ -263,23 +264,23 @@ const result = bigNum.toNumber(); //
 ### Static Methods
 
 ##### fromBytes
-Выводит знаковое число из байт. Работает только с 8 байтами.
+Outputs a signed number from bytes. Only works with 8 bytes.
 ```javascript
 const some = BigNumber.fromBytes(Uint8Array.from([1,2,3,4,5,6,7,8]));
 ```
 
 ##### max
-Принимает любое количество аргументов, выбирает наибольшее число из аргументов
+Takes any number of arguments, chooses the largest number from the arguments
 ```javascript
 BigNumber.max(1, '2', new BigNumber(4)); // with method toFixed '4'
 ```
 ##### min
-Принимает любое количество аргументов, выбирает наименьшее число из аргументов
+Takes any number of arguments, chooses the smallest number of arguments
 ```javascript
 BigNumber.min(1, '2', new BigNumber(4)); // with method toFixed '1'
 ```
 ##### sum
-Принимает любое количество аргументов, складывает числа
+Takes any number of arguments, adds numbers
 ```javascript
 BigNumber.min(1, '2', new BigNumber(4)); //with method toFixed '7'
 ```

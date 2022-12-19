@@ -1,7 +1,4 @@
 .idea
 coverage
-dist
 node_modules
-.size-snapshot.json
-rollup.tsconfig.json
 .rpt2_cache
